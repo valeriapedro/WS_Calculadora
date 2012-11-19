@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://operacoes" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://operacoes" xmlns:intf="http://operacoes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://operacoes" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="mult">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multResponse">
+    <complexType>
+     <sequence>
+      <element name="multReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="soma">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="somaResponse">
+    <complexType>
+     <sequence>
+      <element name="somaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtrai">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtraiResponse">
+    <complexType>
+     <sequence>
+      <element name="subtraiReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="div">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divResponse">
+    <complexType>
+     <sequence>
+      <element name="divReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="somaResponse">
+
+      <wsdl:part element="impl:somaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divResponse">
+
+      <wsdl:part element="impl:divResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multRequest">
+
+      <wsdl:part element="impl:mult" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtraiRequest">
+
+      <wsdl:part element="impl:subtrai" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multResponse">
+
+      <wsdl:part element="impl:multResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divRequest">
+
+      <wsdl:part element="impl:div" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="somaRequest">
+
+      <wsdl:part element="impl:soma" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtraiResponse">
+
+      <wsdl:part element="impl:subtraiResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BasicOperations">
+
+      <wsdl:operation name="mult">
+
+         <wsdl:input message="impl:multRequest" name="multRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multResponse" name="multResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="soma">
+
+         <wsdl:input message="impl:somaRequest" name="somaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:somaResponse" name="somaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtrai">
+
+         <wsdl:input message="impl:subtraiRequest" name="subtraiRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtraiResponse" name="subtraiResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="div">
+
+         <wsdl:input message="impl:divRequest" name="divRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divResponse" name="divResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BasicOperationsSoapBinding" type="impl:BasicOperations">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="mult">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="soma">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="somaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="somaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtrai">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtraiRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtraiResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="div">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BasicOperationsService">
+
+      <wsdl:port binding="impl:BasicOperationsSoapBinding" name="BasicOperations">
+
+         <wsdlsoap:address location="http://localhost:8080/Calculadora/services/BasicOperations"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

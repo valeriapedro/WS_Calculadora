@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BasicOperationsService WSDL service -->
+
+  <service name="BasicOperations" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://operacoes"/>
+      <parameter name="wsdlServiceElement" value="BasicOperationsService"/>
+      <parameter name="schemaQualified" value="http://operacoes"/>
+      <parameter name="wsdlServicePort" value="BasicOperations"/>
+      <parameter name="className" value="operacoes.BasicOperationsSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="BasicOperations"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="mult" qname="operNS:mult" xmlns:operNS="http://operacoes" returnQName="retNS:multReturn" xmlns:retNS="http://operacoes" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="soma" qname="operNS:soma" xmlns:operNS="http://operacoes" returnQName="retNS:somaReturn" xmlns:retNS="http://operacoes" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subtrai" qname="operNS:subtrai" xmlns:operNS="http://operacoes" returnQName="retNS:subtraiReturn" xmlns:retNS="http://operacoes" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="div" qname="operNS:div" xmlns:operNS="http://operacoes" returnQName="retNS:divReturn" xmlns:retNS="http://operacoes" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://operacoes" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="subtrai mult div soma"/>
+
+  </service>
+</deployment>
